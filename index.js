@@ -1179,4 +1179,4 @@ bot.on("message", (message) => {
 
 });
 
-bot.login("NDI2NDIxNzExMTUyMzQ5MTg1.DZWKdA.DnX3l-qVr8EYKbh0IKiFELVPsc8");
+bot.login(process.env.TOKEN);
