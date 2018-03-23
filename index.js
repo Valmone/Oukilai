@@ -974,7 +974,11 @@ bot.on("message", (message) => {
 	        	console.log('première pause');
 	        }
 	        
-	        if (((uni !== '1') || (uni !== '10') || (uni !== '67')) && (pays === 'fr'))
+	        if((uni === '1') || (uni === '10') || (uni === '40') || (uni === '50') || (uni === '67') || (uni === '79') || (uni === '82'))
+		    	{
+		    		uni = uni;
+		    	}
+	        else if (((uni !== '1') || (uni !== '10') || (uni !== '67')) && (pays === 'fr'))
 		        {
 		        	uni = unifr(uni);
 		        }
