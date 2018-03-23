@@ -1097,15 +1097,15 @@ bot.on("message", (message) => {
 						       	data = $("[name^=" + name + "]").attr('id'),
 						       	status = $("[name^=" + name + "]").attr('status');
 						       	if (status === 'a') {status = 'Administrateur';}
-						       	else if (status === 'i') {status = 'Inactif 7 jours';}
-						       	else if (status === 'I') {status = 'Inactif 28 jours';}
-						       	else if (status === 'v') {status = 'Mode Vacances';}
-						       	else if (status === 'b') {status = 'Bloqué';}
-						       	else if (status === 'vi') {status = 'Mode Vacances | Inactif 7 jours';}
-						       	else if (status === 'vI') {status = 'Mode Vacances | Inactif 28 jours';}
-						       	else if (status === 'vib') {status = 'Bloqué | Mode Vacances | Inactif 7 jours';}
-						       	else if (status === 'vIb') {status = 'Bloqué | Mode Vacances | Inactif 28 jours';}
-						       	else{}
+						       	else if (status === 'i') {status = ' -> Inactif 7 jours <-';}
+						       	else if (status === 'I') {status = ' -> Inactif 28 jours <-';}
+						       	else if (status === 'v') {status = ' -> Mode Vacances <-';}
+						       	else if (status === 'b') {status = ' -> Bloqué <-';}
+						       	else if (status === 'vi') {status = ' -> Mode Vacances | Inactif 7 jours <-';}
+						       	else if (status === 'vI') {status = ' -> Mode Vacances | Inactif 28 jours <-';}
+						       	else if (status === 'vib') {status = ' -> Bloqué | Mode Vacances | Inactif 7 jours <-';}
+						       	else if (status === 'vIb') {status = ' -> Bloqué | Mode Vacances | Inactif 28 jours <-';}
+						       	else{status = '';}
 						        					        
 						        if (data)
 						        	{
@@ -1160,7 +1160,7 @@ bot.on("message", (message) => {
 													        i++;
 													        result = result + result_a + result_b;
 												    	}
-													message.channel.send('```' + 'Liste des Planètes et Lunes de \'' + name + '\' -> ' + status + ' <-' + '\n\tTop ' + toppoint + ' General\n' + '\tTop ' + topeco + ' Eco\n' + '\tTop ' + toptechno + ' Recherche\n' + '\tTop ' + topmili + ' Militaire\t-> ' + nbrfleet + ' Vaisseaux\n' + '\n\n' + result + '```');
+													message.channel.send('```' + 'Liste des Planètes et Lunes de \'' + name + '\'' + status + '\n\tTop ' + toppoint + ' General\n' + '\tTop ' + topeco + ' Eco\n' + '\tTop ' + toptechno + ' Recherche\n' + '\tTop ' + topmili + ' Militaire\t-> ' + nbrfleet + ' Vaisseaux\n' + '\n\n' + result + '```');
 												}
 											else
 												{
