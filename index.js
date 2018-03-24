@@ -220,4 +220,4 @@ bot.on("message", (message) => {
 
 });
 
-bot.login("NDI0OTAwODY3NDU2NDk5NzI0.DZZEnA.y9UzItnjT9NiRNpZ8NIShk_koOI");
+bot.login(process.env.TOKEN);
