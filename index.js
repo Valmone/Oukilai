@@ -15,7 +15,7 @@ var request = require("request"),
 
 
 bot.on("ready", () => {
-  console.log("I am ready!");
+  console.log("Prêt !");
   bot.user.setActivity('rien du tout | _help');
 });
 
@@ -167,7 +167,7 @@ bot.on("message", (message) => {
 
 											    	if (nbrfleet !== '')
 												    	{
-												    		while(i != taille)
+												    		while(i < taille)
 														    	{
 														    		result1 = $("planet").eq(i).attr('name'); 
 															        result2 = $("planet").eq(i).attr('coords');
