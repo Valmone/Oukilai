@@ -165,22 +165,26 @@ bot.on("message", (message) => {
 											    	else {}
 											    	
 
-											    	while((i != taille) && (nbrfleet !== ''))
+											    	if (nbrfleet !== '')
 												    	{
-												    		result1 = $("planet").eq(i).attr('name'); 
-													        result2 = $("planet").eq(i).attr('coords');
-													        result_a = 'Planète: \t' + result2 + ' ->  ' + result1 + '\n';
+												    		while(i != taille)
+														    	{
+														    		result1 = $("planet").eq(i).attr('name'); 
+															        result2 = $("planet").eq(i).attr('coords');
+															        result_a = 'Planète: \t' + result2 + ' ->  ' + result1 + '\n';
 
-													        result3 = $("planet").eq(i).children('moon').attr('name'); 
-													        result4 = $("planet").eq(i).children('moon').attr('size');
-													        if (result3)
-														        {
-														        	result_b = 'Lune:    \t' + result2 + ' ->  ' + result3 + ' (' + result4 + ' km)\n\n';
-														        }
-															else{ result_b = '\n';}
-													        i++;
-													        result = result + result_a + result_b;
+															        result3 = $("planet").eq(i).children('moon').attr('name'); 
+															        result4 = $("planet").eq(i).children('moon').attr('size');
+															        if (result3)
+																        {
+																        	result_b = 'Lune:    \t' + result2 + ' ->  ' + result3 + ' (' + result4 + ' km)\n\n';
+																        }
+																	else{ result_b = '\n';}
+															        i++;
+															        result = result + result_a + result_b;
+														    	}
 												    	}
+												    else{}
 													message.channel.send('```' + 'Liste des Planètes et Lunes de \'' + name + '\'' + status + '\n\tTop ' + toppoint + ' General\n' + '\tTop ' + topeco + ' Eco\n' + '\tTop ' + toptechno + ' Recherche\n' + '\tTop ' + topmili + ' Militaire\t-> ' + nbrfleet + ' Vaisseaux\n' + '\n\n' + result + '```');
 												}
 											else
