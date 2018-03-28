@@ -1,4 +1,3 @@
-
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 var fs = require("fs");
@@ -107,6 +106,10 @@ bot.on("message", (message) => {
 	        	console.log('deuxième pause');
 	        }
 
+	        urltoppoints = 'https://s' + uni + '-' + pays + ".ogame.gameforge.com/api/highscore.xml?category=1&type=0",
+	        urltopeco = 'https://s' + uni + '-' + pays + ".ogame.gameforge.com/api/highscore.xml?category=1&type=1",
+	        urltoptechno = 'https://s' + uni + '-' + pays + ".ogame.gameforge.com/api/highscore.xml?category=1&type=2",
+	        urltopmili = 'https://s' + uni + '-' + pays + ".ogame.gameforge.com/api/highscore.xml?category=1&type=3",
 	        urlid = 'https://s' + uni + '-' + pays + ".ogame.gameforge.com/api/players.xml",
 	        urlcolo = 'https://s' + uni + '-' + pays + ".ogame.gameforge.com/api/playerData.xml?id=";
 			
@@ -127,45 +130,21 @@ bot.on("message", (message) => {
 						       	else if (status === 'vI') {status = ' -> Mode Vacances | Inactif 28 jours <-';}
 						       	else if (status === 'vib') {status = ' -> Bloqué | Mode Vacances | Inactif 7 jours <-';}
 						       	else if (status === 'vIb') {status = ' -> Bloqué | Mode Vacances | Inactif 28 jours <-';}
-						       	else{status = '';}
+						       	else{status = ' -> Actif <-';}
 						        					        
 						        if (data)
 						        	{
-								        data = urlcolo + data;
-								        request(data, function (error, response, html) {
+								        urlplanetes = urlcolo + data;
+								        request(urlplanetes, function (error, response, html) {
 										    if (!error) 
 										   		{
 											    	var $ = cheerio.load(html),
 											    	taille = $('planets planet').length,
-											    	toppoint = $("position").eq('0').text(),
-											        topeco = $("position").eq('1').text(),
-											        toptechno = $("position").eq('2').text(),
-											        topmili = $("position").eq('3').text(),
 											        nbrfleet = $("position").eq('3').attr('ships');
-											    	i = 0;
-											    	result = '';
-
-											    	if (nbrfleet)
-												    	{
-												    		taillenbrfleet = nbrfleet.length;
-															if (taillenbrfleet > 6)
-															    {
-															    	nbrfleet1 = nbrfleet.slice(-3);
-															    	nbrfleet2 = nbrfleet.slice(-6, -3);
-															    	nbrfleet3 = nbrfleet.slice(-99, -6);
-															        nbrfleet = nbrfleet3 + '.' + nbrfleet2 + '.' + nbrfleet1;
-															    }
-														    else if (taillenbrfleet > 3)
-															    {
-															       	nbrfleet1 = nbrfleet.slice(-3);
-															    	nbrfleet2 = nbrfleet.slice(-6, -3);
-															        nbrfleet = nbrfleet2 + '.' + nbrfleet1;
-														    	}
-														    else {}
-												    	}
-											    	else {}
-											    	
-											    	if (nbrfleet !== '')
+											        
+											        i = 0;
+													result = '';
+											        if (nbrfleet !== '')
 												    	{
 												    		while(i < taille)
 														    	{
@@ -185,8 +164,64 @@ bot.on("message", (message) => {
 														    	}
 												    	}
 												    else{}
+
+											        request(urltoppoints, function (error, response, html) {
+													    if (!error)
+													    	{
+													            var $ = cheerio.load(html),
+														       	toppoint = $("[id=" + data + "]").attr('position');
+														    }
+											    		else{console.log("Erreur : " + error);}
+														request(urltopeco, function (error, response, html) {
+														    if (!error)
+														    	{
+														            var $ = cheerio.load(html),
+															       	topeco = $("[id=" + data + "]").attr('position');
+															    }
+												    		else{console.log("Erreur : " + error);}
+												    		request(urltoptechno, function (error, response, html) {
+															    if (!error)
+															    	{
+															            var $ = cheerio.load(html),
+																       	toptechno = $("[id=" + data + "]").attr('position');
+																    }
+													    		else{console.log("Erreur : " + error);}
+													    		request(urltopmili, function (error, response, html) {
+																    if (!error)
+																    	{
+																            var $ = cheerio.load(html),
+																	       	topmili = $("[id=" + data + "]").attr('position');
+																	    }
+														    		else{console.log("Erreur : " + error);}
+
+														    		if (nbrfleet)
+																    	{
+																    		taillenbrfleet = nbrfleet.length;
+																			if (taillenbrfleet > 6)
+																			    {
+																			    	nbrfleet1 = nbrfleet.slice(-3);
+																			    	nbrfleet2 = nbrfleet.slice(-6, -3);
+																			    	nbrfleet3 = nbrfleet.slice(-99, -6);
+																			        nbrfleet = nbrfleet3 + '.' + nbrfleet2 + '.' + nbrfleet1;
+																			    }
+																		    else if (taillenbrfleet > 3)
+																			    {
+																			       	nbrfleet1 = nbrfleet.slice(-3);
+																			    	nbrfleet2 = nbrfleet.slice(-6, -3);
+																			        nbrfleet = nbrfleet2 + '.' + nbrfleet1;
+																		    	}
+																		    else {}
+																    	}
+															    	else {}
+															    																    																    	
+																	message.channel.send('```' + 'Liste des Planètes et Lunes de \'' + name + '\'' + status + '\n\tTop ' + toppoint + ' General\n' + '\tTop ' + topeco + ' Eco\n' + '\tTop ' + toptechno + ' Recherche\n' + '\tTop ' + topmili + ' Militaire\t-> ' + nbrfleet + ' Vaisseaux\n' + '\n\n' + result + '```');
+																});
+															});
+														});													
+													});
+															
+																
 											    	
-													message.channel.send('```' + 'Liste des Planètes et Lunes de \'' + name + '\'' + status + '\n\tTop ' + toppoint + ' General\n' + '\tTop ' + topeco + ' Eco\n' + '\tTop ' + toptechno + ' Recherche\n' + '\tTop ' + topmili + ' Militaire\t-> ' + nbrfleet + ' Vaisseaux\n' + '\n\n' + result + '```');
 												}
 											else
 												{
