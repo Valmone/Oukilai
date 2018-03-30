@@ -26,9 +26,9 @@ const prefix = "_";
 
 bot.on("message", (message) => {
 
-	//if (message.content.search('pong') >= 0)		{
-	//		message.channel.send('Eh oh, toi c\'est ping, ok ?\nSinon ça va partir en couille :angry: ');
-	//	} else
+	if (message.content.search('pong') >= 0)		{
+			message.channel.send('Eh oh, toi c\'est ping, ok ?\nSinon ça va partir en couille :angry: ');
+		} else
 
 	if ((message.content.search('Quoi') >= 0) || (message.content.search('quoi') >= 0))		{
 			message.channel.send('Feur !! :smile: ');
@@ -49,8 +49,6 @@ bot.on("message", (message) => {
 	        name = split[1],
 	        uni = split[2],
 	        pays = split[3];
-
-	       
 
 	        setTimeout(rien, 1000);
 	        function rien(){
@@ -126,16 +124,16 @@ bot.on("message", (message) => {
 			
 			if ((name) && (uni !== 'error') && (pays))
 				{
-					 if (name.search('%') >= 0)
-		       				{
-		        				var split = name.split('%'),
-		        				name1 = split[0],
-		        				name2 = split[split.length-1],
-		        				levrai = name1 + ' ' + name2;
-		        			}
-		    			else{levrai = name;}
-					
-					request(urlid, function (error, response, html) {
+					if (name.search('%') >= 0)
+				        {
+				        	var split = name.split('%'),
+				        	name1 = split[0],
+				        	name2 = split[split.length-1],
+				        	levrai = name1 + ' ' + name2;
+				        }
+				    else{levrai = name;}
+
+		    		request(urlid, function (error, response, html) {
 					    if (!error)
 					    	{
 					            var $ = cheerio.load(html);
@@ -154,11 +152,13 @@ bot.on("message", (message) => {
 							            	{
 							            		data = data2;
 							        		}
-							        	name = name2;
+							        	name = name2,
+							        	status = $("[name$=" + name + "]").attr('status');
 						            }
 						        else
 							        {
-							        	data = $("[name=" + name + "]").attr('id');
+							        	data = $("[name^=" + name + "]").attr('id'),
+							        	status = $("[name^=" + name + "]").attr('status');
 							        }
 						       	
 						       	var status = $("[name$=" + name + "]").attr('status');
