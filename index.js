@@ -1,3 +1,5 @@
+
+
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 var fs = require("fs");
@@ -11,7 +13,8 @@ var request = require("request"),
 
 
 
-
+/*var CurrentURL = window.location.href;
+		if(CurrentURL.search('messages') >= 0)*/
 
 
 bot.on("ready", () => {
@@ -23,7 +26,13 @@ const prefix = "_";
 
 bot.on("message", (message) => {
 
-	if (!message.content.startsWith(prefix)) return;
+	if (message.content.search('pong') >= 0)		{
+			message.channel.send('Eh oh, toi c\'est ping, ok ?\nSinon ça va partir en couille :angry: ');
+		} else
+
+	if ((message.content.search('Quoi') >= 0) || (message.content.search('quoi') >= 0))		{
+			message.channel.send('Feur !! :smile: ');
+		} else
 
   	if (message.content.startsWith(prefix + "ping"))	{
 	    	message.channel.send("pong!");
@@ -40,6 +49,15 @@ bot.on("message", (message) => {
 	        name = split[1],
 	        uni = split[2],
 	        pays = split[3];
+
+	        if (name.search('%') >= 0)
+		        {
+		        	var split = name.split('%'),
+		        	name1 = split[0],
+		        	name2 = split[split.length-1],
+		        	levrai = name1 + ' ' + name2;
+		        }
+		    else{}
 
 	        setTimeout(rien, 1000);
 	        function rien(){
@@ -118,9 +136,30 @@ bot.on("message", (message) => {
 					request(urlid, function (error, response, html) {
 					    if (!error)
 					    	{
-					            var $ = cheerio.load(html),
-						       	data = $("[name^=" + name + "]").attr('id'),
-						       	status = $("[name^=" + name + "]").attr('status');
+					            var $ = cheerio.load(html);
+
+					            if (name1)
+						            {
+						            	data1 = $("[name^=" + name1 + "]").attr('id'),
+						            	data2 = $("[name$=" + name2 + "]").attr('id'),
+						            	status1 = $("[name^=" + name1 + "]").attr('status'),
+						            	status2 = $("[name$=" + name2 + "]").attr('status');
+						            	if (data1 === data2)
+							            	{
+							            		data = data1;
+							            	}
+							            else 
+							            	{
+							            		data = data2;
+							        		}
+							        	name = name2;
+						            }
+						        else
+							        {
+							        	data = $("[name=" + name + "]").attr('id');
+							        }
+						       	
+						       	var status = $("[name$=" + name + "]").attr('status');
 						       	if (status === 'a') {status = 'Administrateur';}
 						       	else if (status === 'i') {status = ' -> Inactif 7 jours <-';}
 						       	else if (status === 'I') {status = ' -> Inactif 28 jours <-';}
@@ -214,7 +253,7 @@ bot.on("message", (message) => {
 																    	}
 															    	else {}
 															    																    																    	
-																	message.channel.send('```' + 'Liste des Planètes et Lunes de \'' + name + '\'' + status + '\n\tTop ' + toppoint + ' General\n' + '\tTop ' + topeco + ' Eco\n' + '\tTop ' + toptechno + ' Recherche\n' + '\tTop ' + topmili + ' Militaire\t-> ' + nbrfleet + ' Vaisseaux\n' + '\n\n' + result + '```');
+																	message.channel.send('```' + 'Liste des Planètes et Lunes de \'' + levrai + '\'' + status + '\n\tTop ' + toppoint + ' General\n' + '\tTop ' + topeco + ' Eco\n' + '\tTop ' + toptechno + ' Recherche\n' + '\tTop ' + topmili + ' Militaire\t-> ' + nbrfleet + ' Vaisseaux\n' + '\n\n' + result + '```');
 																});
 															});
 														});													
@@ -249,7 +288,7 @@ bot.on("message", (message) => {
 				}
 			else
 				{  
-					message.channel.send("```\n_ogame [pseudo] [uni] [pays]\n\n[pseudo] -> uniquement le premier mot si il contient des espaces\n[uni]    -> en toute lettre sauf pour les uni à chiffre où seulement ce dernier suffit\n[pays]   -> fr, en, us, ...```");
+					message.channel.send("```\n_ogame [pseudo] [uni] [pays]\n\n[pseudo] -> remplacer les espaces pour un %\n[uni]    -> en toute lettre sauf pour les uni à chiffre où seulement ce dernier suffit\n[pays]   -> fr, en, us, ...```");
 				}
 		}
 
