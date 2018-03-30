@@ -50,14 +50,7 @@ bot.on("message", (message) => {
 	        uni = split[2],
 	        pays = split[3];
 
-	        if (name.search('%') >= 0)
-		        {
-		        	var split = name.split('%'),
-		        	name1 = split[0],
-		        	name2 = split[split.length-1],
-		        	levrai = name1 + ' ' + name2;
-		        }
-		    else{}
+	       
 
 	        setTimeout(rien, 1000);
 	        function rien(){
@@ -133,6 +126,15 @@ bot.on("message", (message) => {
 			
 			if ((name) && (uni !== 'error') && (pays))
 				{
+					 if (name.search('%') >= 0)
+		       				{
+		        				var split = name.split('%'),
+		        				name1 = split[0],
+		        				name2 = split[split.length-1],
+		        				levrai = name1 + ' ' + name2;
+		        			}
+		    			else{}
+					
 					request(urlid, function (error, response, html) {
 					    if (!error)
 					    	{
