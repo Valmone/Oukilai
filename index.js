@@ -133,7 +133,7 @@ bot.on("message", (message) => {
 		        				name2 = split[split.length-1],
 		        				levrai = name1 + ' ' + name2;
 		        			}
-		    			else{}
+		    			else{levrai = name;}
 					
 					request(urlid, function (error, response, html) {
 					    if (!error)
