@@ -26,9 +26,9 @@ const prefix = "_";
 
 bot.on("message", (message) => {
 
-	if (message.content.search('pong') >= 0)		{
-			message.channel.send('Eh oh, toi c\'est ping, ok ?\nSinon ça va partir en couille :angry: ');
-		} else
+///	   if (message.content.search('pong') >= 0)		{
+///			message.channel.send('Eh oh, toi c\'est ping, ok ?\nSinon ça va partir en couille :angry: ');
+///		} else
 
 	if ((message.content.search('Quoi') >= 0) || (message.content.search('quoi') >= 0))		{
 			message.channel.send('Feur !! :smile: ');
