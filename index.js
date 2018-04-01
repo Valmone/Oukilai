@@ -31,7 +31,7 @@ bot.on("message", (message) => {
 		} else
 			
 	if ((message.content.search('pd') >= 0) || (message.content.search('Pd') >= 0) || (message.content.search('pD') >= 0) || (message.content.search('PD') >= 0))		{
-			message.reply('C\'est celui qui dit qui l\'est ENCULEY !!');
+			message.channel.send('C\'est celui qui dit qui l\'est ENCULEY !!');
 		} else
 
 	if ((message.content.search('Quoi') >= 0) || (message.content.search('quoi') >= 0))		{
@@ -43,8 +43,40 @@ bot.on("message", (message) => {
 		} else	
 
 	if (message.content.startsWith(prefix + "help"))	{
-	    	message.reply("```\n_ping\n_ogame```");//\nSupport: https://discord.gg/BZgWM5v
+	    	message.reply({embed: {
+				color: 	2551650,
+				description: '\n_ping\n_ogame'
+			}});//\nSupport: https://discord.gg/BZgWM5v
 		} else
+
+	if (message.content === 'Mon avatar') {
+	    	// Send the user's avatar URL
+	    	message.reply(message.author.avatarURL);
+		} else
+
+	if ((message.content.search('Bonjour') >= 0) || (message.content.search('bonjour') >= 0) || (message.content.search('Salut') >= 0) || (message.content.search('salut') >= 0))	{
+    		var auteur = message.author;
+    		var auteurrole = message.author.roles;
+    		var botrole = message.guild.roles.find("name", "Podnom");
+
+    		if ((message.content.search('Bonjour') >= 0) || (message.content.search('bonjour') >= 0))
+	    		{
+	    			if (!message.member.roles.find("name", "Podnom")) {
+			    			message.channel.send(`Bonjour ` + auteur);
+			    		}
+
+		    		else{}
+	    		}
+	    	else if ((message.content.search('Salut') >= 0) || (message.content.search('salut') >= 0))
+	    		{
+	    			if (!message.member.roles.find("name", "Podnom")) {
+			    			message.channel.send(`Salut ` + auteur);
+			    		}
+
+		    		else{}
+	    		}
+	    	else{}
+	    } else
 
 	if (message.content.startsWith(prefix + "ogame"))
 		{
@@ -170,11 +202,11 @@ bot.on("message", (message) => {
 						       	else if (status === 'i') {status = ' -> Inactif 7 jours <-';}
 						       	else if (status === 'I') {status = ' -> Inactif 28 jours <-';}
 						       	else if (status === 'v') {status = ' -> Mode Vacances <-';}
-						       	else if (status === 'b') {status = ' -> Bloqué <-';}
+						       	else if (status === 'b') {status = ' -> ~~Bloqué~~ <-';}
 						       	else if (status === 'vi') {status = ' -> Mode Vacances | Inactif 7 jours <-';}
 						       	else if (status === 'vI') {status = ' -> Mode Vacances | Inactif 28 jours <-';}
-						       	else if (status === 'vib') {status = ' -> Bloqué | Mode Vacances | Inactif 7 jours <-';}
-						       	else if (status === 'vIb') {status = ' -> Bloqué | Mode Vacances | Inactif 28 jours <-';}
+						       	else if (status === 'vib') {status = ' -> ~~Bloqué~~ | Mode Vacances | Inactif 7 jours <-';}
+						       	else if (status === 'vIb') {status = ' -> ~~Bloqué~~ | Mode Vacances | Inactif 28 jours <-';}
 						       	else{status = ' -> Actif <-';}
 						        					        
 						        if (data)
@@ -195,13 +227,13 @@ bot.on("message", (message) => {
 														    	{
 														    		result1 = $("planet").eq(i).attr('name'); 
 															        result2 = $("planet").eq(i).attr('coords');
-															        result_a = 'Planète: \t' + result2 + ' ->  ' + result1 + '\n';
+															        result_a = '**Planète:** \t' + result2 + ' ->  ' + result1 + '\n';
 
 															        result3 = $("planet").eq(i).children('moon').attr('name'); 
 															        result4 = $("planet").eq(i).children('moon').attr('size');
 															        if (result3)
 																        {
-																        	result_b = 'Lune:    \t' + result2 + ' ->  ' + result3 + ' (' + result4 + ' km)\n\n';
+																        	result_b = '**Lune:**    \t' + result2 + ' ->  ' + result3 + ' (' + result4 + ' km)\n\n';
 																        }
 																	else{ result_b = '\n';}
 															        i++;
@@ -259,7 +291,10 @@ bot.on("message", (message) => {
 																    	}
 															    	else {}
 															    																    																    	
-																	message.channel.send('```' + 'Liste des Planètes et Lunes de \'' + levrai + '\'' + status + '\n\tTop ' + toppoint + ' General\n' + '\tTop ' + topeco + ' Eco\n' + '\tTop ' + toptechno + ' Recherche\n' + '\tTop ' + topmili + ' Militaire\t-> ' + nbrfleet + ' Vaisseaux\n' + '\n\n' + result + '```');
+																	message.channel.send({embed: {
+																		color: 	2551650,
+																		description: 'Liste des Planètes et Lunes de __\'' + levrai + '\'__' + status + '\n\tTop **' + toppoint + '** General\n' + '\tTop **' + topeco + '** Eco\n' + '\tTop **' + toptechno + '** Recherche\n' + '\tTop **' + topmili + '** Militaire\t-> **' + nbrfleet + '** Vaisseaux\n' + '\n\n' + result
+																	}});
 																});
 															});
 														});													
@@ -276,7 +311,10 @@ bot.on("message", (message) => {
 									}
 						    	else if(!data)
 						    		{
-						    			message.channel.send("```Erreur, le joueur n'existe pas\n_help pour plus d\'informations```");
+						    			message.channel.send({embed: {
+											color: 	2551650,
+											description: 'Erreur, le joueur n\'existe pas\n_help pour plus d\'informations'
+										}});
 						    		}
 						    	else {}
 
@@ -290,11 +328,17 @@ bot.on("message", (message) => {
 				}
 			else if (uni === 'error')
 				{
-					message.channel.send('```_help pour plus d\'informations```')
+					message.channel.send({embed: {
+						color: 	2551650,
+						description: '_help pour plus d\'informations'
+					}});
 				}
 			else
 				{  
-					message.channel.send("```\n_ogame [pseudo] [uni] [pays]\n\n[pseudo] -> remplacer les espaces pour un %\n[uni]    -> en toute lettre sauf pour les uni à chiffre où seulement ce dernier suffit\n[pays]   -> fr, en, us, ...```");
+					message.channel.send({embed: {
+						color: 	2551650,
+						description: '\n_ogame [pseudo] [uni] [pays]\n\n[pseudo] -> remplacer les espaces pour un %\n[uni]    -> en toute lettre sauf pour les uni à chiffre où seulement ce dernier suffit\n[pays]   -> fr, en, us, ...'
+					}});
 				}
 		}
 
