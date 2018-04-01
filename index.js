@@ -26,9 +26,13 @@ const prefix = "_";
 
 bot.on("message", (message) => {
 
-///	   if (message.content.search('pong') >= 0)		{
-///			message.channel.send('Eh oh, toi c\'est ping, ok ?\nSinon ça va partir en couille :angry: ');
-///		} else
+	if (message.content.search('_pong') >= 0)		{
+			message.channel.send('Eh oh, toi c\'est ping, ok ?\nSinon ça va partir en couille :angry: ');
+		} else
+			
+	if (message.content.search('pd') >= 0)		{
+			message.channel.send('C\'est celui qui dit qui l\'est ENCULEY !!');
+		} else
 
 	if ((message.content.search('Quoi') >= 0) || (message.content.search('quoi') >= 0))		{
 			message.channel.send('Feur !! :smile: ');
