@@ -31,7 +31,7 @@ bot.on("message", (message) => {
 		} else
 			
 	if ((message.content.search('pd') >= 0) || (message.content.search('Pd') >= 0) || (message.content.search('pD') >= 0) || (message.content.search('PD') >= 0))		{
-			message.channel.send('C\'est celui qui dit qui l\'est ENCULEY !!');
+			message.reply('C\'est celui qui dit qui l\'est ENCULEY !!');
 		} else
 
 	if ((message.content.search('Quoi') >= 0) || (message.content.search('quoi') >= 0))		{
