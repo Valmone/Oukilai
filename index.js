@@ -45,7 +45,7 @@ bot.on("message", (message) => {
 
     		if ((message.content.search('Bonjour') >= 0) || (message.content.search('bonjour') >= 0))
 	    		{
-	    			if (!message.member.roles.find("name", "Podnom")) {
+	    			if (!message.member.roles.find("name", "Oukilai")) {
 			    			message.channel.send(`Bonjour ` + auteur);
 			    		}
 
@@ -53,7 +53,7 @@ bot.on("message", (message) => {
 	    		}
 	    	else if ((message.content.search('Salut') >= 0) || (message.content.search('salut') >= 0) || (message.content.search('Yo') >= 0) || (message.content.search('yo') >= 0))
 	    		{
-	    			if (!message.member.roles.find("name", "Podnom")) {
+	    			if (!message.member.roles.find("name", "Oukilai")) {
 			    			message.channel.send(`Salut ` + auteur);
 			    		}
 
@@ -61,7 +61,7 @@ bot.on("message", (message) => {
 	    		}
 	    	else if ((message.content.search('Hello') >= 0) || (message.content.search('hello') >= 0))
 	    		{
-	    			if (!message.member.roles.find("name", "Podnom")) {
+	    			if (!message.member.roles.find("name", "Oukilai")) {
 			    			message.channel.send(`Hello ` + auteur);
 			    		}
 
