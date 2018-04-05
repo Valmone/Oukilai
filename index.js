@@ -38,7 +38,7 @@ bot.on("message", (message) => {
 	    	message.reply(message.author.avatarURL);
 		} else
 
-	if ((message.content.search('Bonjour') >= 0) || (message.content.search('bonjour') >= 0) || (message.content.search('Salut') >= 0) || (message.content.search('salut') >= 0))	{
+	if ((message.content.search('Bonjour') >= 0) || (message.content.search('bonjour') >= 0) || (message.content.search('Salut') >= 0) || (message.content.search('salut') >= 0) || (message.content.search('Yo') >= 0) || (message.content.search('yo') >= 0))	{
     		var auteur = message.author;
     		var auteurrole = message.author.roles;
     		var botrole = message.guild.roles.find("name", "Podnom");
@@ -51,7 +51,7 @@ bot.on("message", (message) => {
 
 		    		else{}
 	    		}
-	    	else if ((message.content.search('Salut') >= 0) || (message.content.search('salut') >= 0))
+	    	else if ((message.content.search('Salut') >= 0) || (message.content.search('salut') >= 0) || (message.content.search('Yo') >= 0) || (message.content.search('yo') >= 0))
 	    		{
 	    			if (!message.member.roles.find("name", "Podnom")) {
 			    			message.channel.send(`Salut ` + auteur);
@@ -63,22 +63,6 @@ bot.on("message", (message) => {
 	    		{
 	    			if (!message.member.roles.find("name", "Podnom")) {
 			    			message.channel.send(`Hello ` + auteur);
-			    		}
-
-		    		else{}
-	    		}
-	    	else if ((message.content.search('Yo') >= 0) || (message.content.search('yo') >= 0))
-	    		{
-	    			if (!message.member.roles.find("name", "Podnom")) {
-			    			message.channel.send(`Yo ` + auteur);
-			    		}
-
-		    		else{}
-	    		}
-	    	else if ((message.content.search('Salut') >= 0) || (message.content.search('salut') >= 0))
-	    		{
-	    			if (!message.member.roles.find("name", "Podnom")) {
-			    			message.channel.send(`Salut ` + auteur);
 			    		}
 
 		    		else{}
