@@ -13,10 +13,6 @@ var request = require("request"),
 
 
 
-/*var CurrentURL = window.location.href;
-		if(CurrentURL.search('messages') >= 0)*/
-
-
 bot.on("ready", () => {
   console.log("I am ready!");
   bot.user.setActivity('rien du tout | _help');
@@ -26,19 +22,7 @@ const prefix = "_";
 
 bot.on("message", (message) => {
 
-	if (message.content.search('_pong') >= 0)		{
-			message.channel.send('Eh oh, toi c\'est ping, ok ?\nSinon ça va partir en couille :angry: ');
-		} else
-			
-	if ((message.content.search('pd') >= 0) || (message.content.search('Pd') >= 0) || (message.content.search('pD') >= 0) || (message.content.search('PD') >= 0))		{
-			message.channel.send('C\'est celui qui dit qui l\'est ENCULEY !!');
-		} else
-
-	if ((message.content.search('Quoi') >= 0) || (message.content.search('quoi') >= 0))		{
-			message.channel.send('Feur !! :smile: ');
-		} else
-
-  	if (message.content.startsWith(prefix + "ping"))	{
+	if (message.content.startsWith(prefix + "ping"))	{
 	    	message.channel.send("pong!");
 		} else	
 
@@ -61,7 +45,7 @@ bot.on("message", (message) => {
 
     		if ((message.content.search('Bonjour') >= 0) || (message.content.search('bonjour') >= 0))
 	    		{
-	    			if (!message.member.roles.find("name", "Oukilai")) {
+	    			if (!message.member.roles.find("name", "Podnom")) {
 			    			message.channel.send(`Bonjour ` + auteur);
 			    		}
 
@@ -69,7 +53,31 @@ bot.on("message", (message) => {
 	    		}
 	    	else if ((message.content.search('Salut') >= 0) || (message.content.search('salut') >= 0))
 	    		{
-	    			if (!message.member.roles.find("name", "Oukilai")) {
+	    			if (!message.member.roles.find("name", "Podnom")) {
+			    			message.channel.send(`Salut ` + auteur);
+			    		}
+
+		    		else{}
+	    		}
+	    	else if ((message.content.search('Hello') >= 0) || (message.content.search('hello') >= 0))
+	    		{
+	    			if (!message.member.roles.find("name", "Podnom")) {
+			    			message.channel.send(`Hello ` + auteur);
+			    		}
+
+		    		else{}
+	    		}
+	    	else if ((message.content.search('Yo') >= 0) || (message.content.search('yo') >= 0))
+	    		{
+	    			if (!message.member.roles.find("name", "Podnom")) {
+			    			message.channel.send(`Yo ` + auteur);
+			    		}
+
+		    		else{}
+	    		}
+	    	else if ((message.content.search('Salut') >= 0) || (message.content.search('salut') >= 0))
+	    		{
+	    			if (!message.member.roles.find("name", "Podnom")) {
 			    			message.channel.send(`Salut ` + auteur);
 			    		}
 
