@@ -13,6 +13,10 @@ var request = require("request"),
 
 
 
+/*var CurrentURL = window.location.href;
+		if(CurrentURL.search('messages') >= 0)*/
+
+
 bot.on("ready", () => {
   console.log("I am ready!");
   bot.user.setActivity('rien du tout | _help');
@@ -38,10 +42,10 @@ bot.on("message", (message) => {
 	    	message.reply(message.author.avatarURL);
 		} else
 
-	if ((message.content.search('Bonjour') >= 0) || (message.content.search('bonjour') >= 0))	{
+	if ((message.content.search('Bonjour') >= 0) || (message.content.search('bonjour') >= 0) || (message.content.search('Salut') >= 0) || (message.content.search('salut') >= 0) || (message.content.search('Yo') >= 0) || (message.content.search('yo') >= 0))	{
     		var auteur = message.author;
     		var auteurrole = message.author.roles;
-    		var botrole = message.guild.roles.find("name", "Podnom");
+    		var botrole = message.guild.roles.find("name", "Oukilai");
 
     		if ((message.content.search('Bonjour') >= 0) || (message.content.search('bonjour') >= 0))
 	    		{
@@ -51,7 +55,7 @@ bot.on("message", (message) => {
 
 		    		else{}
 	    		}
-	    	else if ((message.content.search('Salut') >= 0) || (message.content.search('salut') >= 0))
+	    	else if ((message.content.search('Salut') >= 0) || (message.content.search('salut') >= 0) || (message.content.search('Yo') >= 0) || (message.content.search('yo') >= 0))
 	    		{
 	    			if (!message.member.roles.find("name", "Oukilai")) {
 			    			message.channel.send(`Salut ` + auteur);
@@ -77,11 +81,6 @@ bot.on("message", (message) => {
 	        name = split[1],
 	        uni = split[2],
 	        pays = split[3];
-
-	        setTimeout(rien, 1000);
-	        function rien(){
-	        	console.log('première pause');
-	        }
 	        
 
 		    if((uni === '1') || (uni === '10') || (uni === '40') || (uni === '50') || (uni === '67') || (uni === '79') || (uni === '82'))
@@ -138,10 +137,7 @@ bot.on("message", (message) => {
 		        {uni = unijp(uni);}
 		    else {}
 
-		    setTimeout(rien2, 1000);
-	        function rien2(){
-	        	console.log('deuxième pause');
-	        }
+		   
 
 	        urltoppoints = 'https://s' + uni + '-' + pays + ".ogame.gameforge.com/api/highscore.xml?category=1&type=0",
 	        urltopeco = 'https://s' + uni + '-' + pays + ".ogame.gameforge.com/api/highscore.xml?category=1&type=1",
@@ -162,6 +158,7 @@ bot.on("message", (message) => {
 				    else{levrai = name;}
 
 		    		request(urlid, function (error, response, html) {
+					    
 					    if (!error)
 					    	{
 					            var $ = cheerio.load(html);
