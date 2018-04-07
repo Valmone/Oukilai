@@ -14,11 +14,6 @@ var request = require("request"),
     urlcolo = ".ogame.gameforge.com/api/playerData.xml?id=";
 
 
-
-/*var CurrentURL = window.location.href;
-		if(CurrentURL.search('messages') >= 0)*/
-
-
 bot.on("ready", () => {
 	console.log("I am ready!");
 	bot.user.setActivity('rien du tout | _help');
@@ -31,10 +26,11 @@ bot.on("message", (message) => {
 	if (!message.author.bot)
 		{
 			
-			/*if (message.mentions.users.find("name", "TesTBoT"))	{
+			var kelid = message.mentions.users.first().id;
+			if (kelid == '426421711152349185')	{
 			  		message.delete();
-			  		message.channel.send('Coucou');
-				} else*/
+			  		message.channel.send('ok');
+				} else
 
 			if (message.content.startsWith(prefix + "ping"))	{
 			    	message.channel.send("pong!");
