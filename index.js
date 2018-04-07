@@ -26,11 +26,14 @@ bot.on("message", (message) => {
 	if (!message.author.bot)
 		{
 			
-			/*var kelid = message.mentions.users.first().id;
-			if (kelid == '426421711152349185')	{
+			if (message.mentions.users.first() === bot.users.get('426421711152349185'))	{
 			  		message.delete();
-			  		message.channel.send('ok');
-				} else*/
+			  		message.channel.send({embed: {
+						color: 	2551650,
+						title: 'Oukilai',
+						description: 'Merci de m\'avoir invité sur votre chan discord.\nPour avoir la liste des commandes: _help\nMerci aussi de faire remonter le moindre problème avec _support.'
+					}});
+				} else
 
 			if (message.content.startsWith(prefix + "ping"))	{
 			    	message.channel.send("pong!");
