@@ -26,11 +26,11 @@ bot.on("message", (message) => {
 	if (!message.author.bot)
 		{
 			
-			var kelid = message.mentions.users.first().id;
+			/*var kelid = message.mentions.users.first().id;
 			if (kelid == '426421711152349185')	{
 			  		message.delete();
 			  		message.channel.send('ok');
-				} else
+				} else*/
 
 			if (message.content.startsWith(prefix + "ping"))	{
 			    	message.channel.send("pong!");
