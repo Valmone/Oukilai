@@ -138,6 +138,8 @@ bot.on("message", (message) => {
 				        {uni = unitw(uni);}
 				    else if (pays === 'jp')
 				        {uni = unijp(uni);}
+					else if (pays === 'se')
+				        {uni = unise(uni);}
 				    else {}
 
 				   
