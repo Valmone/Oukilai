@@ -161,7 +161,7 @@ function unicz(uni) {
 			return('126');
 		}else {return('error');}
 }
-function uniar(){
+function uniar(uni){
 	if (uni.toLowerCase() == 'andromeda'){
 			return('101');
 		}else if (uni.toLowerCase() == 'kassiopeia'){
@@ -188,7 +188,7 @@ function uniar(){
 			return('123');
 		}else {return('error');}
 }
-function unibr(){
+function unibr(uni){
 	if (uni.toLowerCase() == 'antares'){
 			return('127');
 		}else if (uni.toLowerCase() == 'betelgeuse'){
@@ -221,7 +221,7 @@ function unibr(){
 			return('126');
 		}else {return('error');}
 }
-function unidk(){				
+function unidk(uni){				
 	if (uni.toLowerCase() == 'draco'){
 			return('127');
 		}else if (uni.toLowerCase() == 'mizar'){
@@ -242,7 +242,7 @@ function unidk(){
 			return('106');
 		}else {return('error');}
 }
-function unide(){			
+function unide(uni){			
 	if (uni.toLowerCase() == 'tarazed'){
 			return('127');
 		}else if (uni.toLowerCase() == 'cygnus'){
@@ -307,7 +307,7 @@ function unide(){
 			return('125');
 		}else {return('error');}
 }
-function unies(){	
+function unies(uni){	
 	if (uni.toLowerCase() == 'antares'){
 			return('127');
 		}else if (uni.toLowerCase() == 'betelgeuse'){
@@ -366,7 +366,7 @@ function unies(){
 			return('126');
 		}else {return('error');}
 }
-function unihr(){				
+function unihr(uni){				
 	if (uni.toLowerCase() == 'io'){	
 			return('109');
 		}else if (uni.toLowerCase() == 'jupiter'){
@@ -379,7 +379,7 @@ function unihr(){
 			return('113');
 		}else {return('error');}
 }
-function uniit(){	
+function uniit(uni){	
 	if (uni.toLowerCase() == 'betelgeuse'){
 			return('128');
 		}else if (uni.toLowerCase() == 'cygnus'){
@@ -436,7 +436,7 @@ function uniit(){
 			return('115');
 		}else {return('error');}
 }
-function unihu(){
+function unihu(uni){
 	if (uni.toLowerCase() == 'andromeda'){
 			return('101');
 		}else if (uni.toLowerCase() == 'barym'){
@@ -467,7 +467,7 @@ function unihu(){
 			return('125');
 		}else {return('error');}
 }
-function unimx(){
+function unimx(uni){
 	if (uni.toLowerCase() == 'andromeda'){
 			return('101');
 		}else if (uni.toLowerCase() == 'jupiter'){
@@ -490,7 +490,7 @@ function unimx(){
 			return('121');
 		}else {return('error');}
 }
-function unise(){
+function unise(uni){
 	if (uni.toLowerCase() == 'capella'){
 			return('103');
 		}else if (uni.toLowerCase() == 'electra'){
@@ -507,7 +507,7 @@ function unise(){
 			return('107');
 		}else {return('error');}
 }
-function uninl(){			
+function uninl(uni){			
 	if (uni.toLowerCase() == 'antares'){
 			return('127');
 		}else if (uni.toLowerCase() == 'betelgeuse'){
@@ -540,7 +540,7 @@ function uninl(){
 			return('120');
 		}else {return('error');}
 }
-function unino(){
+function unino(uni){
 	if (uni.toLowerCase() == 'andromeda'){
 			return('101');
 		}else if (uni.toLowerCase() == 'draco'){
@@ -551,7 +551,7 @@ function unino(){
 			return('106');
 		}else {return('error');}
 }
-function unipl(){		
+function unipl(uni){		
 	if (uni.toLowerCase() == 'aquarius'){
 			return('153');
 		}else if (uni.toLowerCase() == 'antares'){
@@ -622,7 +622,7 @@ function unipl(){
 			return('126');
 		}else {return('error');}
 }
-function unipt(){			
+function unipt(uni){			
 	if (uni.toLowerCase() == 'antares'){
 			return('127');
 		}else if (uni.toLowerCase() == 'betelgeuse'){
@@ -655,7 +655,7 @@ function unipt(){
 			return('126');
 		}else {return('error');}
 }
-function uniro(){
+function uniro(uni){
 	if (uni.toLowerCase() == 'jupiter'){
 			return('110');
 		}else if (uni.toLowerCase() == 'mizar'){
@@ -680,7 +680,7 @@ function uniro(){
 			return('123');
 		}else {return('error');}
 }
-function unisi(){
+function unisi(uni){
 	if (uni.toLowerCase() == 'andromeda'){
 			return('101');
 		}else if (uni.toLowerCase() == 'electra'){
@@ -693,7 +693,7 @@ function unisi(){
 			return('108');
 		}else {return('error');}
 }
-function unisk(){
+function unisk(uni){
 	if (uni.toLowerCase() == 'andromeda'){
 			return('101');
 		}else if (uni.toLowerCase() == 'hydra'){
@@ -710,7 +710,7 @@ function unisk(){
 			return('113');
 		}else {return('error');}
 }
-function unifi(){
+function unifi(uni){
 	if (uni.toLowerCase() == 'barym'){
 			return('102');
 		}else if (uni.toLowerCase() == 'capella'){
@@ -723,7 +723,7 @@ function unifi(){
 			return('106');
 		}else {return('error');}
 }
-function unitr(){			
+function unitr(uni){			
 	if (uni.toLowerCase() == 'betelgeuse'){
 			return('128');
 		}else if (uni.toLowerCase() == 'eridanus'){
@@ -780,7 +780,7 @@ function unitr(){
 			return('121');
 		}else {return('error');}
 }
-function unius(){			
+function unius(uni){			
 	if (uni.toLowerCase() == 'betelgeuse'){
 			return('128');
 		}else if (uni.toLowerCase() == 'cygnus'){
@@ -817,7 +817,7 @@ function unius(){
 			return('116');
 		}else {return('error');}
 }
-function unigr(){					//univer 1
+function unigr(uni){					//univer 1
 	if (uni.toLowerCase() == 'leo'){
 			return('110');
 		}else if (uni.toLowerCase() == 'orion'){
@@ -838,7 +838,7 @@ function unigr(){					//univer 1
 			return('122');
 		}else {return('error');}
 }
-function uniru(){						//univer 1
+function uniru(uni){						//univer 1
 	if (uni.toLowerCase() == 'andromeda'){
 			return('127');
 		}else if (uni.toLowerCase() == 'betelgeuse'){
@@ -891,7 +891,7 @@ function uniru(){						//univer 1
 			return('125');
 		}else {return('error');}
 }
-function unitw(){						
+function unitw(uni){						
 	if (uni.toLowerCase() == 'andromeda'){
 			return('101');
 		}else if (uni.toLowerCase() == 'orion'){
@@ -916,7 +916,7 @@ function unitw(){
 			return('124');
 		}else {return('error');}
 }
-function unijp(){						
+function unijp(uni){						
 	if (uni.toLowerCase() == 'andromeda'){
 			return('101');
 		}else if (uni.toLowerCase() == 'hydra'){
