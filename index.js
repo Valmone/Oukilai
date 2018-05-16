@@ -364,7 +364,7 @@ bot.on("message", (message) => {
 																			message.channel.send({embed: {
 																				title: 'Liste des Planètes et Lunes de __\'' + levrai + '\'__' + status,
 																				color: 	2551650,
-																				description: '\n\tTop **' + toppoint + '** General\n' + '\tTop **' + topeco + '** Eco\n' + '\tTop **' + toptechno + '** Recherche\n' + '\tTop **' + topmili + '** Militaire\t-> **' + nbrfleet + '** Vaisseaux\n' + '\n\n' + result
+																				description: '\n\tTop **' + toppoint + '** General\n' + '\tTop **' + topeco + '** Eco\n' + '\tTop **' + toptechno + '** Recherche\n' + '\tTop **' + topmili + '** Militaire\t-> **' + nbrfleet + '** Vaisseaux\n' + '\n\n__**' + taille + '** Planètes:__\n\n' + result
 																			}});
 																		});
 																	});
