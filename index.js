@@ -228,22 +228,86 @@ bot.on("message", (message) => {
 															result = '';
 													        if (nbrfleet !== '')
 														    	{
+														    		
+														    		i = 0;
+																	result = '';
+																	var co = '';
+														    		var tempo1 = '';
+														    		var tempo2 = '';
+														    		var tempo3 = '';
+
+														    		var tablo = new Array();
+																	var temoin = taille;
+																	var newtablo = new Array();
+																	var newtemoin = temoin;
+
+																	var	lidadelete = 0;
+
 														    		while(i < taille)
 																    	{
-																    		result1 = $("planet").eq(i).attr('name'); 
+																    		tablo[i] = new Array();
+																			newtablo[i] = new Array();
+
+																    		tablo[i][0] = $("planet").eq(i).attr('name');
+
 																	        result2 = $("planet").eq(i).attr('coords');
-																	        result_a = '**Planète:** \t' + result2 + ' ->  ' + result1 + '\n';
+																	        var split = result2.split(":");
+																	        var tempo1 = split[0];
+																	        var tempo2 = split[1];
+																	        var tempo3 = split[2];
+																	        tablo[i][1] = tempo1;
+																	        tablo[i][2] = tempo2;
+																	        tablo[i][3] = tempo3;
 
 																	        result3 = $("planet").eq(i).children('moon').attr('name'); 
 																	        result4 = $("planet").eq(i).children('moon').attr('size');
+
 																	        if (result3)
 																		        {
-																		        	result_b = '**Lune:**    \t' + result2 + ' ->  ' + result3 + ' (' + result4 + ' km)\n\n';
+																		        	tablo[i][4] = '**Lune:**    \t' + result2 + ' ->  ' + result3 + ' (' + result4 + ' km)\n\n';
 																		        }
-																			else{ result_b = '\n';}
+																			else{ tablo[i][4] = '\n';}
 																	        i++;
-																	        result = result + result_a + result_b;
 																    	}
+
+																    for (var i = 0; i < temoin; i++)
+																		{
+																			var laligneacomparer = tablo[0];
+																			lidadelete = 0;
+
+																			for (var o = 0; o < newtemoin; o++)
+																				{
+																					if (laligneacomparer[1] < tablo[o][1])
+																						{} else
+																					if (laligneacomparer[1] > tablo[o][1])
+																						{laligneacomparer = tablo[o];lidadelete = o;} else 
+																					if (laligneacomparer[1] === tablo[o][1])
+																						{
+																							if (laligneacomparer[2] < tablo[o][2])
+																								{} else
+																							if (laligneacomparer[2] > tablo[o][2])
+																								{laligneacomparer = tablo[o];lidadelete = o;} else 
+																							if (laligneacomparer[2] === tablo[o][2])
+																								{
+																									if (laligneacomparer[3] < tablo[o][3])
+																										{} else
+																									if (laligneacomparer[3] > tablo[o][3])
+																										{laligneacomparer = tablo[o];lidadelete = o;} else 
+																									if (laligneacomparer[3] === tablo[o][3])
+																										{}
+																								}
+																						}
+																				}
+																			newtablo[i] = laligneacomparer;
+																			tablo.splice(lidadelete,1);
+																			newtemoin--;
+																		}
+
+																	for (var i = 0; i < taille; i++)
+																		{
+																			co = newtablo[i][1] + ':' + newtablo[i][2] + ':' + newtablo[i][3];
+																			result = result + '**Planète:** \t' + co + ' ->  ' + newtablo[i][0] + '\n' + newtablo[i][4];
+																		}																	
 														    	}
 														    else{}
 
