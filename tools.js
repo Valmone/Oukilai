@@ -63,6 +63,8 @@ function unifr(uni) {
 			return('123');
 		}else if (uni.toLowerCase() == 'bellatrix'){
 			return('154');
+		}else if (uni.toLowerCase() == 'cosmos'){
+			return('155');
 		}else {return('error');}
 }
 function unien(uni) {		
