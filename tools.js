@@ -65,6 +65,8 @@ function unifr(uni) {
 			return('154');
 		}else if (uni.toLowerCase() == 'cosmos'){
 			return('155');
+		}else if (uni.toLowerCase() == 'dorado'){
+			return('156');
 		}else {return('error');}
 }
 function unien(uni) {		
