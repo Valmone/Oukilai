@@ -61,7 +61,7 @@ bot.on("message", (message) => {
 			    	message.reply(message.author.avatarURL);
 				} else
 
-			if ((message.content.search('Bonjour') >= 0) || (message.content.search('bonjour') >= 0) || (message.content.search('Salut') >= 0) || (message.content.search('salut') >= 0))	{
+			/*if ((message.content.search('Bonjour') >= 0) || (message.content.search('bonjour') >= 0) || (message.content.search('Salut') >= 0) || (message.content.search('salut') >= 0))	{
 		    		var auteur = message.author;
 		    		var auteurrole = message.author.roles;
 		    		var botrole = message.guild.roles.find("name", "Oukilai");
@@ -75,7 +75,7 @@ bot.on("message", (message) => {
 			    			message.channel.send(`Salut ` + auteur);
 						}
 			    	else{}
-			    } else
+			    } else*/
 
 			if (message.content.startsWith(prefix + "ogame"))
 				{
