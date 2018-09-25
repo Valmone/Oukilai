@@ -36,7 +36,8 @@ bot.on("message", (message) => {
 				} else
 
 			if (message.content.startsWith(prefix + "ping"))	{
-			    	message.channel.send("pong!");
+			    	message.react('493157761375535106');
+				message.channel.send("pong! <:dab:493157761375535106>");
 				} else	
 
 			if (message.content.startsWith(prefix + "support"))	{
