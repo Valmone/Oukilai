@@ -1,73 +1,55 @@
 function unifr(uni) {
-	if (uni.toLowerCase() == 'aquarius'){
-			return('153');
-		}else if (uni.toLowerCase() == 'zagadra'){
-			return('126');
-		}else if (uni.toLowerCase() == 'antares'){
-			return('127');
-		}else if (uni.toLowerCase() == 'betelgeuse'){
-			return('128');
-		}else if (uni.toLowerCase() == 'eridanus'){
-			return('131');
-		}else if (uni.toLowerCase() === 'fidis'){
-			return('132');
-		}else if (uni.toLowerCase() == 'ganimed'){
-			return('133');
-		}else if (uni.toLowerCase() == 'hyperion'){
-			return('134');
-		}else if (uni.toLowerCase() == 'izar'){
-			return('135');
-		}else if (uni.toLowerCase() == 'japetus'){
-			return('136');
-		}else if (uni.toLowerCase() == 'kallisto'){
-			return('137');
-		}else if (uni.toLowerCase() == 'libra'){
-			return('138');
-		}else if (uni.toLowerCase() == 'merkur'){
-			return('139');
-		}else if (uni.toLowerCase() == 'nusakan'){
-			return('140');
-		}else if (uni.toLowerCase() == 'oberon'){	
-			return('141');
-		}else if (uni.toLowerCase() == 'polaris'){
-			return('142');
-		}else if (uni.toLowerCase() == 'quaoar'){
-			return('143');
-		}else if (uni.toLowerCase() == 'rhea'){
-			return('144');
-		}else if (uni.toLowerCase() == 'spica'){
-			return('145');
-		}else if (uni.toLowerCase() == 'tarazed'){
-			return('146');
-		}else if (uni.toLowerCase() == 'uriel'){
-			return('147');
-		}else if (uni.toLowerCase() == 'virgo'){
-			return('148');
-		}else if (uni.toLowerCase() == 'wezn'){
-			return('149');
-		}else if (uni.toLowerCase() == 'xanthus'){
-			return('150');
-		}else if (uni.toLowerCase() == 'yildun'){
-			return('151');
-		}else if (uni.toLowerCase() == 'zibal'){
-			return('152');
-		}else if (uni.toLowerCase() == 'fornax'){
-			return('106');
-		}else if (uni.toLowerCase() == 'sirius'){
-			return('119');
-		}else if (uni.toLowerCase() == 'taurus'){
-			return('120');
-		}else if (uni.toLowerCase() == 'vega'){
-			return('122');
-		}else if (uni.toLowerCase() == 'wasat'){
-			return('123');
-		}else if (uni.toLowerCase() == 'bellatrix'){
-			return('154');
-		}else if (uni.toLowerCase() == 'cosmos'){
-			return('155');
-		}else if (uni.toLowerCase() == 'dorado'){
-			return('156');
-		}else {return('error');}
+	if (uni.toLowerCase() == 'wasat'){
+		return('123');
+	}else if (uni.toLowerCase() == 'zagadra'){
+		return('126');
+	}else if (uni.toLowerCase() == 'betelgeuse'){
+		return('128');
+	}else if (uni.toLowerCase() == 'eridanus'){
+		return('131');
+	}else if (uni.toLowerCase() == 'izar'){
+		return('135');
+	}else if (uni.toLowerCase() == 'libra'){
+		return('138');
+	}else if (uni.toLowerCase() == 'merkur'){
+		return('139');
+	}else if (uni.toLowerCase() == 'nusakan'){
+		return('140');
+	}else if (uni.toLowerCase() == 'oberon'){	
+		return('141');
+	}else if (uni.toLowerCase() == 'quaoar'){
+		return('143');
+	}else if (uni.toLowerCase() == 'rhea'){
+		return('144');
+	}else if (uni.toLowerCase() == 'spica'){
+		return('145');
+	}else if (uni.toLowerCase() == 'wezn'){
+		return('149');
+	}else if (uni.toLowerCase() == 'xanthus'){
+		return('150');
+	}else if (uni.toLowerCase() == 'yildun'){
+		return('151');
+	}else if (uni.toLowerCase() == 'zibal'){
+		return('152');
+	}else if (uni.toLowerCase() == 'aquarius'){
+		return('153');
+	}else if (uni.toLowerCase() == 'bellatrix'){
+		return('154');
+	}else if (uni.toLowerCase() == 'cosmos'){
+		return('155');
+	}else if (uni.toLowerCase() == 'dorado'){
+		return('156');
+	}else if (uni.toLowerCase() == 'europa'){
+		return('157');
+	}else if (uni.toLowerCase() == 'fenrir'){
+		return('158');
+	}else if (uni.toLowerCase() == 'galatea'){
+		return('159');
+	}else if (uni.toLowerCase() == 'himalia'){
+		return('160');
+	}else if (uni.toLowerCase() == 'indus'){
+		return('161');
+	}else {return('error');}
 }
 function unien(uni) {		
 	if (uni.toLowerCase() == 'betelgeuse'){
